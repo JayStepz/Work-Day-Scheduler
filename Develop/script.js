@@ -17,7 +17,6 @@ $( document ).ready(function () {
       localStorage.setItem(timeID, descrText); // timeID is the key, descrText is the value saved to local storage
     });
   });
-  //  });
   
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
@@ -34,6 +33,18 @@ $( document ).ready(function () {
   // attribute of each time-block be used to do this?
   //-------------------------------------------------
   //  $.get() to retrieve localStorage data of each block? Or just getItem/setItem?
+    const textArea = $('.description');
+
+    textArea.each(function (){
+      var textArea = $(this).siblings('.description');
+      var timeID = $(this).parent().attr('id');
+
+      $(this).ready(function () {
+        var descrText = textArea.val();
+
+        $(localStorage.getItem(descrText)).appendTo(textArea);
+      });
+  });
 
   // TODO: Add code to display the current date in the header of the page.
   var currentDate = dayjs();
