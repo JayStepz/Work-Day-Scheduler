@@ -1,24 +1,38 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(function () {
+//-------------
+// USE $.ready(function());
+$( document ).ready(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
-  //
+  //-----------------------------------------------------
+  //  $.click for save button click event
+  //  individual click event for each save button in each div? $.on("click", function(){})?
+  //  ex: $( ".saveBtn" ).on( "click", function(event){
+  //  localStorage.log;  
+  //  });
+  
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  //
+  //------------------------------
+  //  $.addClass() for assigning past, present or future
+  //  delete past, present and future classes from html divs and replace them using $.addClass() and day.js?
+  //  Use .removeClass() to delete past, present, future classes as needed?
+  
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  //
+  //-------------------------------------------------
+  //  $.get() to retrieve localStorage data of each block? Or just getItem/setItem?
+
   // TODO: Add code to display the current date in the header of the page.
   var currentDate = dayjs();
   $ ( "#currentDay" ).text(currentDate.format('dddd, MMMM DD'));
