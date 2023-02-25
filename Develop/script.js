@@ -27,26 +27,25 @@ $( document ).ready(function () {
   //  $.addClass() for assigning past, present or future
   //  delete past, present and future classes from html divs and replace them using $.addClass() and day.js?
   //  Use .removeClass() to delete past, present, future classes as needed?
+  const present = $('.present');
+  const past = $('.past');
+  const future = $('.future');
+  const current = dayjs();
+
+  //-------------------------------------------------------------------------------
+  const textArea = $('.description');
+
+  textArea.each(function (){
+    var timeID = $(this).parent().attr('id');
+    var descrText = localStorage.getItem(timeID);
+
+    if (descrText) {
+      $(this).val(descrText);
+    }
+    });
   
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //-------------------------------------------------
-  //  $.get() to retrieve localStorage data of each block? Or just getItem/setItem?
-    const textArea = $('.description');
 
-    textArea.each(function (){
-      var textArea = $(this).siblings('.description');
-      var timeID = $(this).parent().attr('id');
-
-      $(this).ready(function () {
-        var descrText = textArea.val();
-
-        $(localStorage.getItem(descrText)).appendTo(textArea);
-      });
-  });
-
-  // TODO: Add code to display the current date in the header of the page.
+  // TODO: Figure out how to get the Advanced Format plug-in to work so I can add operands to the date.
   var currentDate = dayjs();
   $ ( "#currentDay" ).text(currentDate.format('dddd, MMMM DD'));
 });
