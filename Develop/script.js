@@ -44,5 +44,5 @@ $( document ).ready(function () {
   
   // Displays the date in the header with an ordinal. Needed three lines of script from the Day.js plugin page. https://day.js.org/docs/en/plugin/loading-into-browser
   var timeDate = dayjs();
-  $ ("#currentDay").text(timeDate.format('dddd, MMMM Do'));
+  $("#currentDay").text(timeDate.format('dddd, MMMM Do'));
 });
