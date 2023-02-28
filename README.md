@@ -1,6 +1,6 @@
 # Work Day Scheduler
-[Preview image here]
-[URL here]
+![JayStepz](./Assets/SchedulerPreview.JPG "Scheduler Preview")
+https://jaystepz.github.io/Work-Day-Scheduler/
 ## Overview
 This is an in-browser work day scheduler/planner for a 9AM to 5PM work schedule.
 Each block covers an hour in which you can type and save whatever plans you have for the day.
